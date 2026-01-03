@@ -116,7 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'GMT'
 
 USE_I18N = True
 
@@ -133,9 +133,11 @@ AUTH_USER_MODEL = 'USer.CustomUser'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media' 
 
+
+
 REST_FRAMEWORK = {
 'DEFAULT_PERMISSION_CLASSES': [
-'rest_framework.permissions.AllowAny',
-]
-}   
+'SEAN.permissions.IsAuthorOrReadOnly',
+] 
+}      
 
