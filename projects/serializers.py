@@ -4,4 +4,4 @@ class ProjectSerializer(serializers.ModelSerializer) :
     author = serializers.ReadOnlyField(source="author.username")
     class Meta : 
         model = Project
-        fields = ['title','description','details', 'github_url','live_link','thumbnail'] 
+        fields = ['title','description','details', 'github_url','live_link','thumbnail','author'] 

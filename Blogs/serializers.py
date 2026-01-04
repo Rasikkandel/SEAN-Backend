@@ -4,4 +4,4 @@ class BlogSerializer(serializers.ModelSerializer) :
     author = serializers.ReadOnlyField(source="author.username")
     class Meta : 
         model = Blog 
-        fields = ['title','description','body']
+        fields = ['title','description','body','author']

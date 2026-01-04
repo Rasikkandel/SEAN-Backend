@@ -41,9 +41,16 @@ INSTALLED_APPS = [
     'USer', 
     'resources', 
     'projects', 
-    'rest_framework' , 
+    'django.contrib.sites', 
+    # 3rd-party apps
+    'rest_framework',
+    'rest_framework.authtoken', # for token
+    'allauth', 
+    'allauth.account',
+    'allauth.socialaccount', 
+    'dj_rest_auth', # for authentication endpoints : login , logout , resetpass 
     'corsheaders' , 
-]    
+]     
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -138,6 +145,10 @@ MEDIA_ROOT = BASE_DIR / 'media'
 REST_FRAMEWORK = {
 'DEFAULT_PERMISSION_CLASSES': [
 'SEAN.permissions.IsAuthorOrReadOnly',
-] 
-}      
+] , 
+'DEFAULT_AUTHENTICATION_CLASSES': [ 
+'rest_framework.authentication.SessionAuthentication',
+'rest_framework.authentication.BasicAuthentication'
+],
+}       
 

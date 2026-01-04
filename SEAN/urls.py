@@ -27,5 +27,6 @@ urlpatterns = [
     path('resources/',include("resources.urls")) , 
     path('User/', include("USer.urls")) , 
     path('api-auth/', include('rest_framework.urls')), #for user authentication
+    path('dj-rest-auth/', include('dj_rest_auth.urls')), # for authentication endpoints
 ] + static(settings.MEDIA_URL , document_root=settings.MEDIA_ROOT) 
 
